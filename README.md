@@ -21,8 +21,6 @@ All Report content is found in the /Report directory and takes the following str
 
 Data accessed in the report is found in the /Data directory of the GitHub repository.
 
-Most of the scripts throughout the report will access data through calling the `url` of data found in the repository; however if you wish to recreate some of the data creation process small amounts of code may need to be rewritten in order to fit your desktop environment (for instance some of the code writes to a specific directory on a group members computer, which will not exist on your computer)
-
 ## Individual Work
 
 You can see our individual work in each of our individual directories in the repository.
