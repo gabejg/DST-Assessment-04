@@ -7,6 +7,8 @@
 
 # Within my folder are zipped folders. These are the .log outputs of running the code below on the HPC! I'll keep them up to date but will probably only run this on the final code now. The commented code below the actual code in this notebook are the substitutions made for HPC i.e. chaning the number of epochs of my NN from 10 for my computer to 1000 for the HPC to run.
 
+# We make some minor changes in this code to run on the HPC instead of a home computer. Firstly, tensorflow is removed since it cannot run on the HPC, and secondly we change some of the variables for the final model to run for longer.
+
 # In[1]:
 
 
@@ -15,9 +17,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 np.random.seed(10)
 import pickle
-
-get_ipython().run_line_magic('load_ext', 'tensorboard')
-
 
 # We first import all the data sets and combine them into one data frame to be used later on (while making some immaterial adjustments to the data).
 
@@ -430,12 +429,6 @@ X_scaled.shape
 Y.shape
 
 
-# In[40]:
-
-
-# arbitrary test/train split currently
-
-
 # In[41]:
 
 
@@ -492,31 +485,6 @@ ffmodel.summary()
 
 # From the summary above, we see that we have successfully created our Neural Network with the correct layers.
 
-# In[47]:
-
-
-import datetime
-
-
-# This function allows us to use the TensorBoard visualisation to better visualise our Neuarl Network to combat overfitting and understand the creation of the Neural Network.
-
-# In[48]:
-
-
-# clearing previous logs
-import shutil
-try:
-    shutil.rmtree('C:/Users/corri/OneDrive\Documents/GitHub/DST-Assessment-04/Matt Corrie/logs')
-except WindowsError:
-    pass
-
-
-# In[49]:
-
-
-log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
-
 
 # The model is a proof of concept to figure out what works! From [8], one of the first things we should do is adjust our batch size. Large batch size's degrade the quality of the model due to an inability to generalise so instead in the paper referenced, a batch size of 32-512 data points is recommended. We'll use the middle so take a batch size of 256 (which is also recommended in [9]. 
 # 
@@ -541,8 +509,7 @@ def compile_fit(model, max_epochs, step_size):
         
         print("epoch : " + str(epochs))
         
-        model.fit(X_train, Y_train, epochs=step_size, batch_size=256, validation_data=(X_test, Y_test), 
-          callbacks=[tensorboard_callback])
+        model.fit(X_train, Y_train, epochs=step_size, batch_size=256, validation_data=(X_test, Y_test))
         trainscores = model.evaluate(X_train, Y_train)
         testscores = model.evaluate(X_test, Y_test)
         
@@ -572,19 +539,6 @@ plt.show()
 
 # From the plot above 
 
-# ### Tensorboard
-
-# In[53]:
-
-
-get_ipython().run_line_magic('tensorboard', '--logdir logs/fit')
-
-
-# From the TensorBoard guide, a brief overview of the dashboards shown:
-# 
-# - The **Scalars** dashboard shows how the loss and metrics change with every epoch. You can use it to also track training speed, learning rate, and other scalar values.
-# - The **Graphs** dashboard helps you visualize your model. In this case, the Keras graph of layers is shown which can help you ensure it is built correctly.
-# - The **Distributions** and **Histograms** dashboards show the distribution of a Tensor over time. This can be useful to visualize weights and biases and verify that they are changing in an expected way.
 
 # ### Hyperparameter Tuning
 
@@ -623,10 +577,10 @@ modelHT = KerasClassifier(build_fn=create_model, verbose=0)
 # In[58]:
 
 
-#hidden_layers = [1,2,3,4,5,6,7,8,9,10]
-hidden_layers = [1,2]
-#n_nodes = [1,2,5,10,15,20,25]
-n_nodes = [1,2]
+hidden_layers = [1,2,3,4,5,6,7,8,9,10]
+#hidden_layers = [1,2]
+n_nodes = [1,2,5,10,15,20,25]
+#n_nodes = [1,2]
 param_grid = dict(hidden_layers=hidden_layers, n_nodes = n_nodes, batch_size = [256], epochs=[10])
 
 
@@ -651,7 +605,7 @@ for mean, stdev, param in zip(means, stds, params):
 # In[61]:
 
 
-pd.DataFrame(grid.cv_results_)[['mean_test_score', 'std_test_score', 'params']]
+pd.DataFrame(grid.cv_results_)[['mean_test_score', 'std_test_score', 'params']].to_csv('Grid_Optimisation.csv')
 
 
 # ### Recreating with our best parameters
@@ -668,8 +622,8 @@ tuned_ffmodel = create_model(hidden_layers = hl,n_nodes = num_nod)
 # In[65]:
 
 
-epochs, trainacc, testacc = compile_fit(tuned_ffmodel, 10, 2) # computer version
-# epochs, trainacc, testacc = compile_fit(tuned_ffmodel, 1000, 2) # HPC version
+# epochs, trainacc, testacc = compile_fit(tuned_ffmodel, 10, 2) # computer version
+epochs, trainacc, testacc = compile_fit(tuned_ffmodel, 1000, 2) # HPC version
 
 
 # The below code allows us to run this on the HPC and save our resulting files from this, the files in this folder are from running this on the HPC and not from running this on my own computer which is run with a smaller amount of epochs.
