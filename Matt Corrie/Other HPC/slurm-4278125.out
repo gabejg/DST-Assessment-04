@@ -1,0 +1,6 @@
+loading Anaconda and TensorFlow
+
+The following have been reloaded with a version change:
+  1) languages/anaconda3/2020-3.8.5 => languages/anaconda3/2020.02-tflow-2.2.0
+
+moving to submit directory /mnt/storage/home/mc17336
