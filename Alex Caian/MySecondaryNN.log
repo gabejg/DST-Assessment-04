@@ -1,0 +1,510 @@
+        X    source_ip source_port        dest_ip dest_port proto state
+1  110444   59.166.0.0        4248  149.171.126.9     56378   udp   CON
+2  701306  10.40.182.1           0    10.40.182.3         0   arp   CON
+3 1907784   59.166.0.7       50980  149.171.126.0        80   tcp   FIN
+4  167719   59.166.0.3       11660  149.171.126.4     10328   tcp   FIN
+5 1038235   59.166.0.3       42071  149.171.126.3      6881   tcp   FIN
+6 2406529 175.45.176.0       47439 149.171.126.10        53   udp   INT
+   duration source_bytes dest_bytes source_ttl dest_ttl source_loss dest_loss
+1  0.002432          536        304         31       29           0         0
+2 43.460464           84        138          0        0           0         0
+3  1.506006         1684      10168         31       29           3         5
+4  0.035045         2542      21006         31       29           7        14
+5  0.013793         1540       1644         31       29           4         4
+6  0.000001          114          0        254        0           0         0
+  service  source_load    dest_load source_pkts dest_pkts source_TP_win
+1       - 1.322368e+06 7.500001e+05           4         4             0
+2       - 1.030822e+01 1.693493e+01           3         3             0
+3    http 8.308067e+03 5.101706e+04          14        18           255
+4       - 5.659009e+05 4.681067e+06          40        42           255
+5       - 8.375262e+05 9.007468e+05          16        18           255
+6     dns 4.560000e+08 0.000000e+00           2         0             0
+  dest_TP_win source_tcp_bn dest_tcp_bn source_mean_sz dest_mean_sz trans_depth
+1           0             0           0            134           76           0
+2           0             0           0             28           46           0
+3         255    1467118964  3647621306            120          565           1
+4         255     766943272   767243869             64          500           0
+5         255    2161611423  2172215325             96           91           0
+6           0             0           0             57            0           0
+  res_bdy_len source_jitter dest_jitter start_time  last_time
+1           0      0.826137    0.427567 1421931576 1421931576
+2           0      4.768306    0.000000 1421955860 1421955904
+3        3924   9286.992130 8130.869136 1424245080 1424245082
+4           0     62.301768   60.339844 1421933658 1421933658
+5           0     62.007580    1.429076 1421970708 1421970708
+6           0      0.000000    0.000000 1424258987 1424258987
+  source_int_pk_time dest_int_pk_time  tcp_rtt   synack   ackdat
+1           0.588667         0.305333 0.000000 0.000000 0.000000
+2       21729.728000     21729.720000 0.000000 0.000000 0.000000
+3         115.818849        88.558882 0.000629 0.000501 0.000128
+4           0.890282         0.840049 0.000745 0.000592 0.000153
+5           0.887467         0.782647 0.000612 0.000481 0.000131
+6           0.001000         0.000000 0.000000 0.000000 0.000000
+  is_sm_ips_ports count_state_ttl count_flw_http_mthd is_ftp_login
+1               0               0                   0            0
+2               0               0                   0            0
+3               0               0                   1            0
+4               0               0                   0            0
+5               0               0                   0            0
+6               0               2                   0            0
+  count_ftp_cmd count_srv_source count_srv_dest count_dest_ltm count_source_ltm
+1             0                9              4              6                8
+2             0                2              2              2                2
+3             0                3              1              1                3
+4             0                7              7              4                3
+5             0               13             11              9               10
+6             0               29             29             17               16
+  count_source_destport_ltm count_dest_sourceport_ltm counts_dest_source_ltm
+1                         1                         1                      5
+2                         2                         2                      2
+3                         2                         1                      1
+4                         1                         1                      1
+5                         4                         1                      7
+6                        16                        16                     29
+  attack_cat Label
+1                0
+2                0
+3                0
+4                0
+5                0
+6    Generic     1
+[1] 2032036      50
+
+10.40.170.2 10.40.182.1 10.40.182.3 10.40.182.6  10.40.85.1 10.40.85.10 
+       1685        3162        1689        2764        3188         639 
+
+10.40.170.2 10.40.182.1 10.40.182.3 10.40.182.6  10.40.85.1 10.40.85.10 
+        409         822         416         728         830         154 
+t1
+      1       2       3       4       5       6       7       8       9      10 
+1774908    4007   15356    9844    1041    2138    1421     422   13175   35620 
+     11      12      13      14 
+ 172379    1414     172     139 
+
+                          Fuzzers         Fuzzers   Reconnaissance  
+         1774908             4007            15356             9844 
+      Shellcode          Analysis         Backdoor        Backdoors 
+            1041             2138             1421              422 
+             DoS         Exploits          Generic   Reconnaissance 
+           13175            35620           172379             1414 
+       Shellcode            Worms 
+             172              139 
+t2
+     1      2      3      4      5      6      7      8      9     10     11 
+443855   1044   3839   2384    247    539    374    112   3178   8905  43102 
+    12     13     14 
+   345     51     35 
+
+                          Fuzzers         Fuzzers   Reconnaissance  
+          443855             1044             3839             2384 
+      Shellcode          Analysis         Backdoor        Backdoors 
+             247              539              374              112 
+             DoS         Exploits          Generic   Reconnaissance 
+            3178             8905            43102              345 
+       Shellcode            Worms 
+              51               35 
+Source_train
+     1      2      3      4      5      6      7      8      9     10     11 
+  1685   3162   1689   2764   3188    639   1682      1    210    233  24232 
+    12     13     14     15     16     17     18     19     20     21     22 
+    25  12830    169  33040  36096      5     21  65406     17    240    243 
+    23     24     25     26     27     28     29     30     31     32     33 
+   236    281    244    220    242    224  66635 102139  25505  95123     92 
+    34     35     36     37     38     39     40     41     42     43 
+157584 158194 158176 156635 158590 158149 151605 151285 151296 152004 
+
+    10.40.170.2     10.40.182.1     10.40.182.3     10.40.182.6      10.40.85.1 
+           1685            3162            1689            2764            3188 
+    10.40.85.10     10.40.85.30       127.0.0.1   149.171.126.0   149.171.126.1 
+            639            1682               1             210             233 
+ 149.171.126.10  149.171.126.11  149.171.126.12  149.171.126.13  149.171.126.14 
+          24232              25           12830             169           33040 
+ 149.171.126.15  149.171.126.16  149.171.126.17  149.171.126.18  149.171.126.19 
+          36096               5              21           65406              17 
+  149.171.126.2   149.171.126.3   149.171.126.4   149.171.126.5   149.171.126.6 
+            240             243             236             281             244 
+  149.171.126.7   149.171.126.8   149.171.126.9    175.45.176.0    175.45.176.1 
+            220             242             224           66635          102139 
+   175.45.176.2    175.45.176.3 192.168.241.243      59.166.0.0      59.166.0.1 
+          25505           95123              92          157584          158194 
+     59.166.0.2      59.166.0.3      59.166.0.4      59.166.0.5      59.166.0.6 
+         158176          156635          158590          158149          151605 
+     59.166.0.7      59.166.0.8      59.166.0.9 
+         151285          151296          152004 
+Source_test
+    1     2     3     4     5     6     7     8     9    10    11    12    13 
+  409   822   416   728   830   154   456    51    78  6133     3  3252    49 
+   14    15    16    17    18    19    20    21    22    23    24    25    26 
+ 8007  8787     4     1 16274     4    55    68    64    58    54    50    49 
+   27    28    29    30    31    32    33    34    35    36    37    38    39 
+   61 16364 25859  6521 23550    16 39943 39486 39374 39318 39369 39477 37814 
+   40    41    42 
+37774 38045 38183 
+
+    10.40.170.2     10.40.182.1     10.40.182.3     10.40.182.6      10.40.85.1 
+            409             822             416             728             830 
+    10.40.85.10     10.40.85.30   149.171.126.0   149.171.126.1  149.171.126.10 
+            154             456              51              78            6133 
+ 149.171.126.11  149.171.126.12  149.171.126.13  149.171.126.14  149.171.126.15 
+              3            3252              49            8007            8787 
+ 149.171.126.16  149.171.126.17  149.171.126.18  149.171.126.19   149.171.126.2 
+              4               1           16274               4              55 
+  149.171.126.3   149.171.126.4   149.171.126.5   149.171.126.6   149.171.126.7 
+             68              64              58              54              50 
+  149.171.126.8   149.171.126.9    175.45.176.0    175.45.176.1    175.45.176.2 
+             49              61           16364           25859            6521 
+   175.45.176.3 192.168.241.243      59.166.0.0      59.166.0.1      59.166.0.2 
+          23550              16           39943           39486           39374 
+     59.166.0.3      59.166.0.4      59.166.0.5      59.166.0.6      59.166.0.7 
+          39318           39369           39477           37814           37774 
+     59.166.0.8      59.166.0.9 
+          38045           38183 
+[1] 1 0
+ [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1
+ [1]  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 10  1  1  1  1  1  1  1  1  1
+[1] 2032036       4
+[1] 508010      4
+  Source_train     Dest_train     Proto_train          V1        
+ Min.   : 1.00   Min.   : 1.00   Min.   :  1.0   Min.   :0.0000  
+ 1st Qu.:34.00   1st Qu.:18.00   1st Qu.:115.0   1st Qu.:1.0000  
+ Median :37.00   Median :23.00   Median :115.0   Median :1.0000  
+ Mean   :35.15   Mean   :21.38   Mean   :116.5   Mean   :0.8735  
+ 3rd Qu.:40.00   3rd Qu.:26.00   3rd Qu.:121.0   3rd Qu.:1.0000  
+ Max.   :43.00   Max.   :47.00   Max.   :135.0   Max.   :1.0000  
+  Source_train     Dest_train     Proto_train          V1        
+ Min.   : 1.00   Min.   : 1.00   Min.   :  1.0   Min.   :0.0000  
+ 1st Qu.:33.00   1st Qu.:17.00   1st Qu.:114.0   1st Qu.:1.0000  
+ Median :36.00   Median :22.00   Median :114.0   Median :1.0000  
+ Mean   :34.17   Mean   :20.38   Mean   :115.5   Mean   :0.8737  
+ 3rd Qu.:39.00   3rd Qu.:25.00   3rd Qu.:120.0   3rd Qu.:1.0000  
+ Max.   :42.00   Max.   :46.00   Max.   :134.0   Max.   :1.0000  
+# weights:  16
+initial  value 724501.712994 
+final  value 257128.000000 
+converged
+      
+MyPred      0      1
+     1  64155 443855
+      
+            0      1
+  TRUE  64155 443855
+[1] "The accuracy of our prediction using only the source, dest and protocol features is 12.6286884116454"
+     nrow dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i]
+1 2032036       0.002432            536            304             31
+2 2032036      43.460464             84            138              0
+3 2032036       1.506006           1684          10168             31
+  dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i]
+1             29              0              0   1.322368e+06   750000.06250
+2              0              0              0   1.030822e+01       16.93493
+3             29              3              5   8.308067e+03    51017.06250
+  dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i]
+1              4              4              0              0              0
+2              3              3              0              0              0
+3             14             18            255            255     1467118964
+  dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i]
+1              0            134             76              0              0
+2              0             28             46              0              0
+3     3647621306            120            565              1           3924
+  dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i]
+1       0.826137       0.427567     1421931576     1421931576       0.588667
+2       4.768306       0.000000     1421955860     1421955904   21729.728000
+3    9286.992130    8130.869136     1424245080     1424245082     115.818849
+  dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i]
+1       0.305333       0.000000       0.000000       0.000000              0
+2   21729.720000       0.000000       0.000000       0.000000              0
+3      88.558882       0.000629       0.000501       0.000128              0
+  dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i]
+1              0              0              0              0              9
+2              0              0              0              0              2
+3              0              1              0              0              3
+  dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i] dff_train[, i]
+1              4              6              8              1              1
+2              2              2              2              2              2
+3              1              1              3              2              1
+  dff_train[, i] dff_train[, i]
+1              5              0
+2              2              0
+3              1              0
+    nrow dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i]
+1 508010         33661      0.036133           528           304            31
+2 508010          3593      0.001209           132           164            31
+3 508010          2142      0.001134           132           164            31
+  dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i]
+1            29             0             0      87676.09      50480.17
+2            29             0             0     436724.56     542597.19
+3            29             0             0     465608.47     578483.25
+  dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i]
+1             4             4             0             0             0
+2             2             2             0             0             0
+3             2             2             0             0             0
+  dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i]
+1             0           132            76             0             0
+2             0            66            82             0             0
+3             0            66            82             0             0
+  dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i]
+1       9.89101      10.68273    1421927414    1421927414         7.005
+2       0.00000       0.00000    1421927414    1421927414         0.043
+3       0.00000       0.00000    1421927414    1421927414         0.017
+  dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i]
+1      7.564333             0             0             0             0
+2      0.014000             0             0             0             0
+3      0.013000             0             0             0             0
+  dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i]
+1             0             0             0             0             2
+2             0             0             0             0             6
+3             0             0             0             0            12
+  dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i] dff_test[, i]
+1             4             2             3             1             1
+2             9             1             1             1             1
+3             7             1             2             2             1
+  dff_test[, i] dff_test[, i]
+1             2             0
+2             1             0
+3             1             0
+[1] 2032036      41
+[1] 508010     41
+ [1] "Feature1"  "Feature2"  "Feature3"  "Feature4"  "Feature5"  "Feature6" 
+ [7] "Feature7"  "Feature8"  "Feature9"  "Feature10" "Feature11" "Feature12"
+[13] "Feature13" "Feature14" "Feature15" "Feature16" "Feature17" "Feature18"
+[19] "Feature19" "Feature20" "Feature21" "Feature22" "Feature23" "Feature24"
+[25] "Feature25" "Feature26" "Feature27" "Feature28" "Feature29" "Feature30"
+[31] "Feature31" "Feature32" "Feature33" "Feature34" "Feature35" "Feature36"
+[37] "Feature37" "Feature38" "Feature39" "Feature40" "Feature41"
+ [1] "Feature1"  "Feature2"  "Feature3"  "Feature4"  "Feature5"  "Feature6" 
+ [7] "Feature7"  "Feature8"  "Feature9"  "Feature10" "Feature11" "Feature12"
+[13] "Feature13" "Feature14" "Feature15" "Feature16" "Feature17" "Feature18"
+[19] "Feature19" "Feature20" "Feature21" "Feature22" "Feature23" "Feature24"
+[25] "Feature25" "Feature26" "Feature27" "Feature28" "Feature29" "Feature30"
+[31] "Feature31" "Feature32" "Feature33" "Feature34" "Feature35" "Feature36"
+[37] "Feature37" "Feature38" "Feature39" "Feature40" "Feature41"
+  Source_train Dest_train Proto_train V1  Feature1 Feature2 Feature3 Feature4
+1           34         28         121  1  0.002432      536      304       31
+2            2          3           7  1 43.460464       84      138        0
+3           41          9         115  1  1.506006     1684    10168       31
+  Feature5 Feature6 Feature7     Feature8     Feature9 Feature10 Feature11
+1       29        0        0 1.322368e+06 750000.06250         4         4
+2        0        0        0 1.030822e+01     16.93493         3         3
+3       29        3        5 8.308067e+03  51017.06250        14        18
+  Feature12 Feature13  Feature14  Feature15 Feature16 Feature17 Feature18
+1         0         0          0          0       134        76         0
+2         0         0          0          0        28        46         0
+3       255       255 1467118964 3647621306       120       565         1
+  Feature19   Feature20   Feature21  Feature22  Feature23    Feature24
+1         0    0.826137    0.427567 1421931576 1421931576     0.588667
+2         0    4.768306    0.000000 1421955860 1421955904 21729.728000
+3      3924 9286.992130 8130.869136 1424245080 1424245082   115.818849
+     Feature25 Feature26 Feature27 Feature28 Feature29 Feature30 Feature31
+1     0.305333  0.000000  0.000000  0.000000         0         0         0
+2 21729.720000  0.000000  0.000000  0.000000         0         0         0
+3    88.558882  0.000629  0.000501  0.000128         0         0         1
+  Feature32 Feature33 Feature34 Feature35 Feature36 Feature37 Feature38
+1         0         0         9         4         6         8         1
+2         0         0         2         2         2         2         2
+3         0         0         3         1         1         3         2
+  Feature39 Feature40 Feature41
+1         1         5         0
+2         2         2         0
+3         1         1         0
+  Source_train Dest_train Proto_train V1 Feature1 Feature2 Feature3 Feature4
+1           33         27         120  1 0.036133      528      304       31
+2           38         23         120  1 0.001209      132      164       31
+3           39         22         120  1 0.001134      132      164       31
+  Feature5 Feature6 Feature7  Feature8  Feature9 Feature10 Feature11 Feature12
+1       29        0        0  87676.09  50480.17         4         4         0
+2       29        0        0 436724.56 542597.19         2         2         0
+3       29        0        0 465608.47 578483.25         2         2         0
+  Feature13 Feature14 Feature15 Feature16 Feature17 Feature18 Feature19
+1         0         0         0       132        76         0         0
+2         0         0         0        66        82         0         0
+3         0         0         0        66        82         0         0
+  Feature20 Feature21  Feature22  Feature23 Feature24 Feature25 Feature26
+1   9.89101  10.68273 1421927414 1421927414     7.005  7.564333         0
+2   0.00000   0.00000 1421927414 1421927414     0.043  0.014000         0
+3   0.00000   0.00000 1421927414 1421927414     0.017  0.013000         0
+  Feature27 Feature28 Feature29 Feature30 Feature31 Feature32 Feature33
+1         0         0         0         0         0         0         0
+2         0         0         0         0         0         0         0
+3         0         0         0         0         0         0         0
+  Feature34 Feature35 Feature36 Feature37 Feature38 Feature39 Feature40
+1         2         4         2         3         1         1         2
+2         6         9         1         1         1         1         1
+3        12         7         1         2         2         1         1
+  Feature41
+1         0
+2         0
+3         0
+[1] 2032036      45
+[1] 508010     45
+# weights:  47
+initial  value 768181.959272 
+final  value 257128.000000 
+converged
+# weights:  93
+initial  value 342614.738594 
+final  value 257128.000000 
+converged
+# weights:  139
+initial  value 439657.275388 
+final  value 257128.000000 
+converged
+# weights:  185
+initial  value 987602.950314 
+final  value 257128.000000 
+converged
+# weights:  231
+initial  value 390734.407181 
+final  value 257128.000000 
+converged
+# weights:  277
+initial  value 298700.590879 
+final  value 257128.000000 
+converged
+# weights:  323
+initial  value 429060.587425 
+final  value 257128.000000 
+converged
+# weights:  369
+initial  value 242514.204977 
+iter  10 value 205364.220716
+iter  20 value 204403.786322
+iter  30 value 204090.068330
+final  value 204073.886667 
+converged
+# weights:  415
+initial  value 508882.076056 
+final  value 257128.000000 
+converged
+# weights:  461
+initial  value 391582.703896 
+final  value 257128.000000 
+converged
+# weights:  507
+initial  value 371555.147760 
+final  value 257128.000000 
+converged
+# weights:  553
+initial  value 311533.792352 
+final  value 257128.000000 
+converged
+# weights:  599
+initial  value 383624.638524 
+final  value 257128.000000 
+converged
+# weights:  645
+initial  value 1200685.533762 
+final  value 257128.000000 
+converged
+# weights:  691
+initial  value 920767.368947 
+final  value 257128.000000 
+converged
+# weights:  737
+initial  value 225741.554498 
+iter  10 value 209928.003548
+iter  20 value 192130.184718
+iter  30 value 192029.139202
+final  value 192029.107985 
+converged
+# weights:  783
+initial  value 578758.678042 
+final  value 257128.000000 
+converged
+# weights:  829
+initial  value 461228.835849 
+final  value 257128.000000 
+converged
+# weights:  875
+initial  value 229352.903765 
+iter  10 value 210626.517032
+iter  20 value 190567.997201
+iter  30 value 189606.146250
+iter  40 value 189503.521335
+final  value 189457.544536 
+converged
+# weights:  921
+initial  value 960844.224787 
+final  value 257128.000000 
+converged
+# weights:  967
+initial  value 442215.366710 
+final  value 257128.000000 
+converged
+# weights:  1013
+initial  value 1088303.917272 
+final  value 257128.000000 
+converged
+# weights:  1059
+initial  value 478096.839953 
+iter  10 value 206259.743450
+iter  20 value 201709.822000
+iter  30 value 199801.895240
+iter  40 value 199787.755924
+iter  50 value 199787.234962
+final  value 199787.224401 
+converged
+# weights:  1105
+initial  value 1414942.360425 
+final  value 257128.000000 
+converged
+# weights:  1151
+initial  value 535037.357208 
+final  value 257128.000000 
+converged
+# weights:  1197
+initial  value 307749.864384 
+final  value 257128.000000 
+converged
+# weights:  1243
+initial  value 665440.451223 
+final  value 257128.000000 
+converged
+# weights:  1289
+initial  value 824903.741224 
+final  value 257128.000000 
+converged
+# weights:  1335
+initial  value 441964.677788 
+final  value 257128.000000 
+converged
+# weights:  1381
+initial  value 753623.996778 
+final  value 257128.000000 
+converged
+# weights:  1427
+initial  value 778122.842772 
+iter  10 value 177832.965803
+iter  20 value 151766.639520
+iter  30 value 137945.345158
+iter  40 value 137772.420103
+iter  50 value 137681.920210
+iter  60 value 137470.755179
+iter  70 value 137230.980451
+final  value 137230.202098 
+converged
+# weights:  1473
+initial  value 253914.665998 
+iter  10 value 205249.520895
+iter  20 value 202950.335788
+iter  30 value 201011.154360
+iter  40 value 200998.717035
+iter  50 value 200741.818136
+iter  60 value 200700.076750
+iter  70 value 200674.781297
+iter  80 value 200576.218881
+final  value 200576.218881 
+stopped after 80 iterations
+# weights:  1519
+initial  value 284116.276188 
+final  value 257128.000000 
+converged
+# weights:  1565
+initial  value 715722.164522 
+final  value 257128.000000 
+converged
+# weights:  1611
+initial  value 1015784.069698 
+final  value 257128.000000 
+converged
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  12.63   12.63   12.63   25.56   12.63   90.93 
+[1] "The best overall accuracy we got is 90.9310840337789"
