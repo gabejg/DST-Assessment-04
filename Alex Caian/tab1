@@ -1,0 +1,2 @@
+structure(c(60078L, 4077L, 17752L, 426103L), .Dim = c(2L, 2L), .Dimnames = structure(list(
+    c("FALSE", "TRUE"), c("0", "1")), .Names = c("", "")), class = "table")

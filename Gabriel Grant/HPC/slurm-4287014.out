@@ -1,0 +1,13 @@
+Loading TensorFlow
+
+The following have been reloaded with a version change:
+  1) libs/cuda/10.0-gcc-5.4.0-2.26 => libs/cuda/9.0-gcc-5.4.0-2.26
+  2) libs/cudnn/10.1-cuda-10.0 => libs/cudnn/9.0-cuda-9.0
+
+
+The following have been reloaded with a version change:
+  1) libs/cuda/9.0-gcc-5.4.0-2.26 => libs/cuda/10.0-gcc-5.4.0-2.26
+  2) libs/cudnn/9.0-cuda-9.0 => libs/cudnn/10.1-cuda-10.0
+
+moving to submit directory /mnt/storage/home/ks20881
+/tmp/slurmd/job4287014/slurm_script: line 15: ./gpujob: No such file or directory
