@@ -1,1 +1,55 @@
 
+    ### LIBRARIES used in the paper ###
+
+
+# install.packages("plotrix")
+# install.packages("mice")
+# install.packages("VIM")
+# install.packages("lattice") 
+# install.packages("tidyr")
+# install.packages("dplyr")
+# install.packages("caret")
+# install.packages("neuralnet")
+# install.packages("nnet")
+
+library(plotrix)
+library(mice)
+library(VIM)
+library(lattice)
+library(tidyr)
+library(dplyr)
+library(caret)
+library(neuralnet)
+library(nnet)
+
+
+    ### FUNCTIONS used in the paper ###
+    
+    ##  This accuracy function is used to compute the accuracy of neuralnet() NN models
+acc <- function() {
+	if(identical(sum(tab[,1]),sum(truth))==TRUE) 
+	{	print("We have 100% accuracy in prediction") }
+	if(ncol(tab)>1) {
+		c2 <- sum(tab[,2])
+		c <- sum(tab)
+		p<- paste("We have", (1-(c2/c))*100, "accuracy", sep = " ")
+		print(p) }
+	}
+  
+   ## This accuracy function is an early model of the one above - used to compute the accuracy of neuralnet() NN models
+            ## NO LONGER USED IN THE PAPER
+acc2 <- function() {
+	if(identical(sum(tab[,1]),sum(truth))==TRUE) 
+	{	print("We have 100% accuracy in prediction") }
+	if(ncol(tab)==2) {
+		c2 <- sum(tab[,2])
+    c1 <- sum(tab[,1])
+		c <- c1 + c2
+		p<- paste("We have", (1-(c2/c))*100, "accuracy", sep = " ")
+		print(p) }
+	}
+  
+   ## This accuracy function is used to compute the accuracy of confusion matrices - results of nnet() NN models
+   
+accuracy <- function(x){sum(diag(x)/(sum(rowSums(x)))) * 100}
+
