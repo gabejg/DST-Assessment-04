@@ -8,14 +8,18 @@
 * Alex Caian
 * Matt Corrie
 
-Our project is an equal split amongst each project member.
+Our project is an equal equity split amongst each project member.
 
 ## Reading Order
 
 All Report content is found in the /Report directory and takes the following structure:
 * 01 - Introduction
-
-* 08 - Conclusion
+* 02 - 
+* 03 - No Hidden and Dropout
+* 04 - 
+* 05 - FFN & ELM
+* 06 - Performance Analysis
+* 07 - Conclusion
 
 ## Data
 
