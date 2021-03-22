@@ -1,9 +1,12 @@
-from keras import models, layers
-from keras.models import Sequential
-from keras.layers import Dense
-import datetime
-import gzip
 import pickle
+import tensorflow as tf
+import gzip
+import sys
+import sklearn
+import datetime as dt
+from sklearn.model_selection import train_test_split
+
+sys.setrecursionlimit(1000000)
 
 start = dt.datetime.now()
 print("Reading df1")
@@ -54,6 +57,7 @@ df_service = pd.DataFrame(df['service'])
 df_count_ftp_cmd = pd.DataFrame(df['count_ftp_cmd'])
 df_attack_cat = pd.DataFrame(df['attack_cat'])
 
+print("creating dictionaries")
 # we now create dictionaries to allow us to map onto the data frame
 
 sips = df.source_ip.unique()
@@ -103,6 +107,7 @@ df = df.drop('service',axis=1)
 df = df.drop('count_ftp_cmd',axis=1)
 df = df.drop('attack_cat',axis=1)
 
+print("most data processing done")
 #Scaling data
 
 from sklearn import preprocessing
@@ -125,46 +130,15 @@ print(X.shape)
 print(X_scaled.shape)
 print(Y.shape)
 
+print("scaling complete")
 #Splitting data
 
 X_train, X_test, Y_train, Y_test = train_test_split(X_scaled, Y, test_size = 0.1, random_state = 10)
 
-def compile_fit(model, max_epochs, step_size):
-    
-    model.compile(loss=keras.losses.SparseCategoricalCrossentropy(), optimizer='adam', metrics=['accuracy'])
-    
-    model.summary()
-    
-    epochs_list=list()
-    trainacc=list()
-    testacc=list()
-    
-    epochs = 0
-    
-    for i in range(0, int(max_epochs / step_size)):
-        
-        print("epoch : " + str(epochs))
-        
-        model.fit(X_train, Y_train, epochs=step_size, batch_size=256, validation_data=(X_test, Y_test))
-        trainscores = model.evaluate(X_train, Y_train)
-        testscores = model.evaluate(X_test, Y_test)
-        
-        trainacc.append(trainscores[1])
-        testacc.append(testscores[1])
-        epochs = epochs + step_size
-        epochs_list.append(epochs)
-        
-    return epochs_list, trainacc, testacc
+model = tf.keras.models.load_model('NoHiddenModelHPC')
+predictions = model.predict(X_test)
+Y_pred = predictions.argmax(axis=1)
+Y_test_c = Y_test.values.tolist()
 
-model = Sequential()
-model.add(Dense(24, input_dim=X_train.shape[1], activation='relu'))   
-model.add(Dense(10, activation='softmax'))
-
-
-epochs, trainacc, testacc = compile_fit(model, 1000, 2) # HPC version
-
-
-model.save('NoHiddenModelHPC')
-pickle.dump(epochs, open('epochs_nohidden.pkl','wb'))
-pickle.dump(trainacc, open('trainacc_nohidden.pkl','wb'))
-pickle.dump(testacc, open('testacc_nohidden.pkl','wb'))
+pickle.dump(Y_pred, open('../Y_predictions.pkl','wb'))
+pickle.dump(Y_test_c, open('../Y_predictions.pkl','wb'))
