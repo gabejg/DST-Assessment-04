@@ -14,7 +14,7 @@ Our project is an equal equity split amongst each project member.
 
 All Report content is found in the /Report directory and takes the following structure:
 * 01 - Introduction
-* 02 - 
+* 02 - FFN & SLP
 * 03 - No Hidden and Dropout
 * 04 - 
 * 05 - FFN & ELM
