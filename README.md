@@ -13,6 +13,7 @@ Our project is an equal equity split amongst each project member.
 ## Reading Order
 
 All Report content is found in the /Report directory and takes the following structure:
+* 00 - ReadMeFIRST!
 * 01 - Introduction
 * 02 - FFN & SLP
 * 03 - No Hidden and Dropout
