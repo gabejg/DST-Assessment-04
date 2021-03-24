@@ -45,7 +45,7 @@ data_service = pd.DataFrame(data['service'])
 data_count_ftp_cmd = pd.DataFrame(data['count_ftp_cmd'])
 data_attack_cat = pd.DataFrame(data['attack_cat'])
 
-df['attack_cat'] = df['attack_cat'].map({'Normal': 'Normal', 'Exploits': 'Exploits', ' Fuzzers ': 'Fuzzers', 'DoS': 'DoS',
+data['attack_cat'] = data['attack_cat'].map({'Normal': 'Normal', 'Exploits': 'Exploits', ' Fuzzers ': 'Fuzzers', 'DoS': 'DoS',
                                           ' Reconnaissance ': 'Reconnaissance', ' Fuzzers': 'Fuzzers', 'Analysis': 'Analysis',
                                          'Backdoor': 'Backdoor', 'Reconnaissance': 'Reconnaissance',  ' Shellcode ': 'Shellcode',
                                          'Backdoors': 'Backdoor', 'Shellcode': 'Shellcode',  'Worms': 'Worms', 'Generic': 'Generic'})
@@ -97,18 +97,19 @@ data = data.drop('service',axis=1)
 data = data.drop('count_ftp_cmd',axis=1)
 data = data.drop('attack_cat',axis=1)
 
+Y = data['attack_cat_int']
+X = data.drop('attack_cat_int',axis=1)
+
 from sklearn import preprocessing
 from sklearn.preprocessing import StandardScaler
 
-scaler = preprocessing.StandardScaler().fit(data)
-data_scaled = scaler.transform(data)
+scaler = preprocessing.StandardScaler().fit(X)
+data_scaled = scaler.transform(X)
 data_scaled.shape
 
 from sklearn.model_selection import train_test_split
 import datetime as dt
 
-
-Y = data['attack_cat_int']
 X_train, X_test, Y_train, Y_test = train_test_split(data_scaled, Y, test_size = 0.1, random_state = 10)
 
 import keras
@@ -146,8 +147,7 @@ def compile_fit(model, max_epochs, step_size):
         
         print("epoch : " + str(epochs))
         
-        model.fit(X_train, Y_train, epochs=step_size, batch_size=256, validation_data=(X_test, Y_test), 
-          callbacks=[tensorboard_callback])
+        model.fit(X_train, Y_train, epochs=step_size, batch_size=256, validation_data=(X_test, Y_test))
         trainscores = model.evaluate(X_train, Y_train)
         testscores = model.evaluate(X_test, Y_test)
         
@@ -160,7 +160,7 @@ def compile_fit(model, max_epochs, step_size):
 
 
 
-epochs, trainacc, testacc = compile_fit(autoencoder, 1000, 2)
+epochs, trainacc, testacc = compile_fit(autoencoder, 750, 2)
 
 
 trainscores = autoencoder.evaluate(X_train, Y_train)
