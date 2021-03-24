@@ -17,7 +17,7 @@ All Report content is found in the /Report directory and takes the following str
 * 01 - Introduction
 * 02 - FFN & SLP
 * 03 - No Hidden and Dropout
-* 04 - Luke AutoEncoders & Naive Bayes
+* 04 - Luke AutoEncoder & Naive Bayes
 * 05 - FFN & ELM
 * 06 - Performance Analysis
 * 07 - Conclusion
