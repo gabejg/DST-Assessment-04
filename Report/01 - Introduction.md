@@ -12,7 +12,7 @@ First of all, we downloaded and compressed the four parts of the dataset to our 
 
 We decided that we would attempt to use different forms of Neural Network implementations and see how they compared, as well as get a general impression for how well Neural Networks performed on a classification task such as this. This immediately limited some of the networks available to us as different forms of network are used more in different application such as image classification, which did not apply in our case. We therefore decided to experiment with just a few different implementations as well as some differences in parameters of similar networks in order to see how this affected the final result.
 
-Due to the inherent complexity of Deep Learning (though often made easier throught he implementation of packages), there were two major hurdles that we would have to address in this project:
+Due to the inherent complexity of Deep Learning (though often made easier throught the implementation of packages), there were two major hurdles that we would have to address in this project:
 
 * Would our machines be up to the challenge of running a Neural Network? The main issues we were concerned about were memory usage, as well as the potential time it might take a model to run.
 * Making sure the data was suitable for use in a Neural Network, making sure we followed guidlines on how to pre-process our data for correct implementation.
