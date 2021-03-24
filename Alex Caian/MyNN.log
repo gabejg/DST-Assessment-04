@@ -1,0 +1,167 @@
+        X    source_ip source_port        dest_ip dest_port proto state
+1  110444   59.166.0.0        4248  149.171.126.9     56378   udp   CON
+2  701306  10.40.182.1           0    10.40.182.3         0   arp   CON
+3 1907784   59.166.0.7       50980  149.171.126.0        80   tcp   FIN
+4  167719   59.166.0.3       11660  149.171.126.4     10328   tcp   FIN
+5 1038235   59.166.0.3       42071  149.171.126.3      6881   tcp   FIN
+6 2406529 175.45.176.0       47439 149.171.126.10        53   udp   INT
+   duration source_bytes dest_bytes source_ttl dest_ttl source_loss dest_loss
+1  0.002432          536        304         31       29           0         0
+2 43.460464           84        138          0        0           0         0
+3  1.506006         1684      10168         31       29           3         5
+4  0.035045         2542      21006         31       29           7        14
+5  0.013793         1540       1644         31       29           4         4
+6  0.000001          114          0        254        0           0         0
+  service  source_load    dest_load source_pkts dest_pkts source_TP_win
+1       - 1.322368e+06 7.500001e+05           4         4             0
+2       - 1.030822e+01 1.693493e+01           3         3             0
+3    http 8.308067e+03 5.101706e+04          14        18           255
+4       - 5.659009e+05 4.681067e+06          40        42           255
+5       - 8.375262e+05 9.007468e+05          16        18           255
+6     dns 4.560000e+08 0.000000e+00           2         0             0
+  dest_TP_win source_tcp_bn dest_tcp_bn source_mean_sz dest_mean_sz trans_depth
+1           0             0           0            134           76           0
+2           0             0           0             28           46           0
+3         255    1467118964  3647621306            120          565           1
+4         255     766943272   767243869             64          500           0
+5         255    2161611423  2172215325             96           91           0
+6           0             0           0             57            0           0
+  res_bdy_len source_jitter dest_jitter start_time  last_time
+1           0      0.826137    0.427567 1421931576 1421931576
+2           0      4.768306    0.000000 1421955860 1421955904
+3        3924   9286.992130 8130.869136 1424245080 1424245082
+4           0     62.301768   60.339844 1421933658 1421933658
+5           0     62.007580    1.429076 1421970708 1421970708
+6           0      0.000000    0.000000 1424258987 1424258987
+  source_int_pk_time dest_int_pk_time  tcp_rtt   synack   ackdat
+1           0.588667         0.305333 0.000000 0.000000 0.000000
+2       21729.728000     21729.720000 0.000000 0.000000 0.000000
+3         115.818849        88.558882 0.000629 0.000501 0.000128
+4           0.890282         0.840049 0.000745 0.000592 0.000153
+5           0.887467         0.782647 0.000612 0.000481 0.000131
+6           0.001000         0.000000 0.000000 0.000000 0.000000
+  is_sm_ips_ports count_state_ttl count_flw_http_mthd is_ftp_login
+1               0               0                   0            0
+2               0               0                   0            0
+3               0               0                   1            0
+4               0               0                   0            0
+5               0               0                   0            0
+6               0               2                   0            0
+  count_ftp_cmd count_srv_source count_srv_dest count_dest_ltm count_source_ltm
+1             0                9              4              6                8
+2             0                2              2              2                2
+3             0                3              1              1                3
+4             0                7              7              4                3
+5             0               13             11              9               10
+6             0               29             29             17               16
+  count_source_destport_ltm count_dest_sourceport_ltm counts_dest_source_ltm
+1                         1                         1                      5
+2                         2                         2                      2
+3                         2                         1                      1
+4                         1                         1                      1
+5                         4                         1                      7
+6                        16                        16                     29
+  attack_cat Label
+1                0
+2                0
+3                0
+4                0
+5                0
+6    Generic     1
+[1] 2032036      50
+   Feature1 Feature2 Feature3 Feature4 Feature5 Feature6 Feature7     Feature8
+1  0.002432      536      304       31       29        0        0 1.322368e+06
+2 43.460464       84      138        0        0        0        0 1.030822e+01
+3  1.506006     1684    10168       31       29        3        5 8.308067e+03
+      Feature9 Feature10 Feature11 Feature12 Feature13  Feature14  Feature15
+1 750000.06250         4         4         0         0          0          0
+2     16.93493         3         3         0         0          0          0
+3  51017.06250        14        18       255       255 1467118964 3647621306
+  Feature16 Feature17 Feature18 Feature19   Feature20   Feature21  Feature22
+1       134        76         0         0    0.826137    0.427567 1421931576
+2        28        46         0         0    4.768306    0.000000 1421955860
+3       120       565         1      3924 9286.992130 8130.869136 1424245080
+   Feature23    Feature24    Feature25 Feature26 Feature27 Feature28 Feature29
+1 1421931576     0.588667     0.305333  0.000000  0.000000  0.000000         0
+2 1421955904 21729.728000 21729.720000  0.000000  0.000000  0.000000         0
+3 1424245082   115.818849    88.558882  0.000629  0.000501  0.000128         0
+  Feature30 Feature31 Feature32 Feature33 Feature34 Feature35 Feature36
+1         0         0         0         0         9         4         6
+2         0         0         0         0         2         2         2
+3         0         1         0         0         3         1         1
+  Feature37 Feature38 Feature39 Feature40 Feature41
+1         8         1         1         5         0
+2         2         2         2         2         0
+3         3         2         1         1         0
+'data.frame':	2032036 obs. of  41 variables:
+ $ Feature1 : num  0.00243 43.46046 1.50601 0.03504 0.01379 ...
+ $ Feature2 : int  536 84 1684 2542 1540 114 2438 4328 37396 1580 ...
+ $ Feature3 : int  304 138 10168 21006 1644 0 20826 2456 3380 10168 ...
+ $ Feature4 : int  31 0 31 31 31 254 31 31 31 31 ...
+ $ Feature5 : int  29 0 29 29 29 0 29 29 29 29 ...
+ $ Feature6 : int  0 0 3 7 4 0 7 7 18 3 ...
+ $ Feature7 : int  0 0 5 14 4 0 13 7 8 5 ...
+ $ Feature8 : num  1.32e+06 1.03e+01 8.31e+03 5.66e+05 8.38e+05 ...
+ $ Feature9 : num  7.50e+05 1.69e+01 5.10e+04 4.68e+06 9.01e+05 ...
+ $ Feature10: int  4 3 14 40 16 2 38 18 52 12 ...
+ $ Feature11: int  4 3 18 42 18 0 40 18 42 18 ...
+ $ Feature12: int  0 0 255 255 255 0 255 255 255 255 ...
+ $ Feature13: int  0 0 255 255 255 0 255 255 255 255 ...
+ $ Feature14: num  0.00 0.00 1.47e+09 7.67e+08 2.16e+09 ...
+ $ Feature15: num  0.00 0.00 3.65e+09 7.67e+08 2.17e+09 ...
+ $ Feature16: int  134 28 120 64 96 57 64 240 719 132 ...
+ $ Feature17: int  76 46 565 500 91 0 521 136 80 565 ...
+ $ Feature18: int  0 0 1 0 0 0 0 0 0 1 ...
+ $ Feature19: int  0 0 3924 0 0 0 0 0 0 3924 ...
+ $ Feature20: num  0.826 4.768 9286.992 62.302 62.008 ...
+ $ Feature21: num  0.428 0 8130.869 60.34 1.429 ...
+ $ Feature22: int  1421931576 1421955860 1424245080 1421933658 1421970708 1424258987 1424239231 1424231321 1424230515 1424237643 ...
+ $ Feature23: int  1421931576 1421955904 1424245082 1421933658 1421970708 1424258987 1424239231 1424231321 1424230515 1424237644 ...
+ $ Feature24: num  5.89e-01 2.17e+04 1.16e+02 8.90e-01 8.87e-01 ...
+ $ Feature25: num  3.05e-01 2.17e+04 8.86e+01 8.40e-01 7.83e-01 ...
+ $ Feature26: num  0 0 0.000629 0.000745 0.000612 0 0.000622 0.000619 0.000611 0.000626 ...
+ $ Feature27: num  0 0 0.000501 0.000592 0.000481 0 0.000473 0.000496 0.000495 0.0005 ...
+ $ Feature28: num  0 0 0.000128 0.000153 0.000131 0 0.000149 0.000123 0.000116 0.000126 ...
+ $ Feature29: int  0 0 0 0 0 0 0 0 0 0 ...
+ $ Feature30: int  0 0 0 0 0 2 0 0 0 0 ...
+ $ Feature31: int  0 0 1 0 0 0 0 0 0 1 ...
+ $ Feature32: int  0 0 0 0 0 0 0 0 0 0 ...
+ $ Feature33: int  0 0 0 0 0 0 0 0 0 0 ...
+ $ Feature34: int  9 2 3 7 13 29 7 5 2 1 ...
+ $ Feature35: int  4 2 1 7 11 29 4 5 1 1 ...
+ $ Feature36: int  6 2 1 4 9 17 2 5 3 6 ...
+ $ Feature37: int  8 2 3 3 10 16 4 5 4 2 ...
+ $ Feature38: int  1 2 2 1 4 16 1 1 2 1 ...
+ $ Feature39: int  1 2 1 1 1 16 1 1 1 1 ...
+ $ Feature40: int  5 2 1 1 7 29 2 3 1 1 ...
+ $ Feature41: int  0 0 0 0 0 1 0 0 0 0 ...
+                               [,1]
+error                  1.066465e+04
+reached.threshold      9.160334e-03
+steps                  6.869900e+04
+Intercept.to.1layhid1  5.942496e-01
+Feature1.to.1layhid1  -7.772645e-01
+Feature2.to.1layhid1   7.311654e-01
+Feature3.to.1layhid1  -1.063584e+00
+Feature4.to.1layhid1  -6.921020e-01
+Feature5.to.1layhid1  -2.326050e-01
+Feature6.to.1layhid1  -1.292147e+00
+[1] "matrix" "array" 
+                  
+                       1
+                   22193
+   Fuzzers            37
+   Fuzzers           206
+   Reconnaissance    105
+   Shellcode           9
+  Analysis            32
+  Backdoor            20
+  Backdoors            6
+  DoS                173
+  Exploits           453
+  Generic           2141
+  Reconnaissance      19
+  Shellcode            4
+  Worms                2
+[1] "We have 100% accuracy in prediction"
+[1] "Our final accuracy is "
